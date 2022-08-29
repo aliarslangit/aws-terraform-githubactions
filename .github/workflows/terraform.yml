@@ -69,12 +69,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    # - name: "Configure AWS Credentials" Action For GitHub Actions
-    #   uses: aws-actions/configure-aws-credentials@v1
-    #   with:
-    #     audience: sts.amazonaws.com
-    #     aws-access-key-id: ${{ secrets.aws-access-key}}
-    #     aws-secret-access-key: ${{ secrets.docker_pass }}
+    - name: "Configure AWS Credentials" Action For GitHub Actions
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        audience: sts.amazonaws.com
+        aws-access-key-id: ${{ secrets.aws-access-key}}
+        aws-secret-access-key: ${{ secrets.docker_pass }}
       
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
@@ -87,8 +87,6 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform validate
       run: terraform validate
-
-    - name: Configure AWS
      
     # Generates an execution plan for Terraform
     - name: Terraform Plan
