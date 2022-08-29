@@ -98,6 +98,9 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve -input=false
 
+    - name: Terraform Destroy
+      run: terraform destroy -auto-approve -input=false
+
 
 
     # - name: "Configure AWS Credentials" Action For GitHub Actions
